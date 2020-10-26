@@ -1,0 +1,75 @@
+@charset "UTF-8";
+/* Colores */
+/* Fuentes */
+/* Tamaños Fuente */
+.navbar {
+  background-color: #1D3752;
+}
+.navbar .navbar-brand {
+  color: #ffffff;
+}
+.navbar .nav-item .nav-link {
+  color: #ffffff;
+}
+
+.banner-inicio .resumen-financiero .head-resumen {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  vertical-align: middle;
+}
+.banner-inicio .resumen-financiero .indicadores {
+  display: grid;
+  grid-template: repeat(2, 1fr)/repeat(4, 1fr);
+}
+.banner-inicio .resumen-financiero .indicadores .renta-variable .card-body .indicador-general {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 12px;
+}
+.banner-inicio .resumen-financiero .indicadores .renta-variable .card-body .indicador-variacion {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  font-size: 12px;
+}
+.banner-inicio .resumen-financiero .indicadores .indicador-economico .card-body .indicador-general {
+  text-align: center;
+}
+.banner-inicio .resumen-financiero .indicadores .indicador-economico .card-body .indicador-variacion {
+  text-align: center;
+}
+.banner-inicio .login .recupera-contraseña {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.blog-calculadora .blog .articulos {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.blog-calculadora .calculadoras .calculadora {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.noticias .cards-noticias {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.footer .footer-links {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.footer .footer-links div ul li {
+  list-style: none;
+}
+
+/*# sourceMappingURL=styles.css.map */

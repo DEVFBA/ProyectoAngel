@@ -1,0 +1,111 @@
+@use 'global' as *;
+
+.navbar {
+    background-color: $primary;
+
+    .navbar-brand {
+        color: $white;
+    }
+
+    .nav-item {
+        .nav-link {
+            color: $white;
+        }
+    }
+}
+
+.banner-inicio {
+    .resumen-financiero {
+        .head-resumen {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            vertical-align: middle;
+        }
+
+        .indicadores {
+            display: grid;
+            grid-template: repeat(2, 1fr) / repeat(4, 1fr);
+
+            .renta-variable {
+                .card-body {
+                    .indicador-general {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-between;
+                        font-size: $fzcard-finanzas;
+                    }
+
+                    .indicador-variacion {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: flex-end;
+                        font-size: $fzcard-finanzas;
+                    }
+                }
+            }
+
+            .indicador-economico {
+                .card-body {
+                    .indicador-general {
+                        text-align: center;
+                    }
+
+                    .indicador-variacion {
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
+
+    .login {
+        .recupera-contraseña {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+        }
+    }
+}
+
+.blog-calculadora {
+    .blog {
+        .articulos {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+    }
+
+    .calculadoras {
+        .calculadora{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+    }
+}
+
+.noticias {
+    .cards-noticias {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+}
+
+.footer {
+    .footer-links {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+
+        & div {
+            & ul {
+                & li {
+                    list-style: none;
+                }
+            }
+        }
+    }
+}
