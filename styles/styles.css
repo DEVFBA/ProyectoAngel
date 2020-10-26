@@ -12,6 +12,9 @@
   color: #ffffff;
 }
 
+.banner-inicio {
+  margin-top: 65px;
+}
 .banner-inicio .resumen-financiero .head-resumen {
   display: flex;
   flex-direction: row;
