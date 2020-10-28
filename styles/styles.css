@@ -1,9 +1,9 @@
 @charset "UTF-8";
 /* Colores */
 /* Fuentes */
-/* Tamaños Fuente */
+/* Tamaños y envergaduras de Fuente */
 .navbar {
-  background-color: #1D3752;
+  background-color: #1d3752;
 }
 .navbar .navbar-brand {
   color: #ffffff;
@@ -13,7 +13,21 @@
 }
 
 .banner-inicio {
-  margin-top: 65px;
+  margin-top: 100px;
+  margin-bottom: 70px;
+  background-image: url(../images/stocks.jpg);
+  border-radius: 10px;
+}
+.banner-inicio .resumen-financiero {
+  border-radius: 10px;
+  margin-right: 10px;
+}
+.banner-inicio .resumen-financiero .titulo-seccion {
+  color: #ffffff;
+}
+.banner-inicio .resumen-financiero time {
+  color: #ffffff;
+  line-height: 2.5;
 }
 .banner-inicio .resumen-financiero .head-resumen {
   display: flex;
@@ -23,49 +37,131 @@
 }
 .banner-inicio .resumen-financiero .indicadores {
   display: grid;
-  grid-template: repeat(2, 1fr)/repeat(4, 1fr);
+  grid-template: 1fr/1fr;
 }
-.banner-inicio .resumen-financiero .indicadores .renta-variable .card-body .indicador-general {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+.banner-inicio .resumen-financiero .indicadores .renta-variable {
+  padding-left: 0;
+  padding-right: 0;
+  margin: 5px;
+}
+.banner-inicio .resumen-financiero .indicadores .renta-variable .card-body {
+  padding-left: 5px;
+  padding-right: 5px;
+  background-color: #2c7695;
+  color: #ffffff;
+}
+.banner-inicio .resumen-financiero .indicadores .renta-variable .card-body .indicador-general .indice {
+  font-size: 15px;
+  font-weight: bold;
+}
+.banner-inicio .resumen-financiero .indicadores .renta-variable .card-body .indicador-general .cotizacion {
   font-size: 12px;
+  font-weight: bold;
+  text-align: center;
 }
 .banner-inicio .resumen-financiero .indicadores .renta-variable .card-body .indicador-variacion {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
+}
+.banner-inicio .resumen-financiero .indicadores .renta-variable .card-body .indicador-variacion p {
   font-size: 12px;
+}
+.banner-inicio .resumen-financiero .indicadores .renta-variable .card-body .indicador-variacion p:first-child {
+  margin-right: 5px;
+}
+.banner-inicio .resumen-financiero .indicadores .indicador-economico {
+  padding-left: 0;
+  padding-right: 0;
+  margin: 5px;
+}
+.banner-inicio .resumen-financiero .indicadores .indicador-economico .card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding-left: 5px;
+  padding-right: 5px;
+  background-color: #2c7695;
+  color: #ffffff;
 }
 .banner-inicio .resumen-financiero .indicadores .indicador-economico .card-body .indicador-general {
   text-align: center;
 }
+.banner-inicio .resumen-financiero .indicadores .indicador-economico .card-body .indicador-general .indice {
+  font-size: 15px;
+  font-weight: bold;
+}
 .banner-inicio .resumen-financiero .indicadores .indicador-economico .card-body .indicador-variacion {
   text-align: center;
 }
-.banner-inicio .login .recupera-contraseña {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
+.banner-inicio .resumen-financiero .indicadores .indicador-economico .card-body .indicador-variacion .cotizacion {
+  font-size: 12px;
+  font-weight: bold;
+}
+.banner-inicio .login {
+  margin-left: 10px;
+  color: #ffffff;
+  font-weight: 500;
+}
+.banner-inicio .login form {
+  margin-top: 22px;
+  padding: 0 40px;
+}
+.banner-inicio .login form .ingresar {
+  margin-bottom: 20px;
+}
+.banner-inicio .login form .ingresar .btn {
+  background-color: #214d72;
+  border: none;
+}
+.banner-inicio .login form .ingresar #recuperaContrasena {
+  margin-left: 20px;
+}
+.banner-inicio .login form .little {
+  font-size: 12px;
+}
+.banner-inicio .login form #ingresaEmail {
+  margin-bottom: 10px;
+}
+.banner-inicio .login form #ingresaPassword {
+  margin-bottom: 10px;
+}
+.banner-inicio .login form .registro #registro {
+  margin-left: 20px;
 }
 
+.blog-calculadora {
+  margin-top: 70px;
+  margin-bottom: 70px;
+}
 .blog-calculadora .blog .articulos {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 .blog-calculadora .calculadoras .calculadora {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
 }
+.blog-calculadora .calculadoras .calculadora .grafico img {
+  height: 76%;
+  width: 100%;
+}
 
+.noticias {
+  margin-top: 70px;
+  margin-bottom: 70px;
+}
 .noticias .cards-noticias {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
 }
 
+.footer {
+  margin-top: 70px;
+}
 .footer .footer-links {
   display: flex;
   flex-direction: row;

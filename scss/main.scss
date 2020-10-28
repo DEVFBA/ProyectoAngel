@@ -15,9 +15,24 @@
 }
 
 .banner-inicio {
-  margin-top: 65px;
+  margin-top: 100px;
+  margin-bottom: 70px;
+  background-image: url(../images/stocks.jpg);
+  border-radius: 10px;
 
   .resumen-financiero {
+    border-radius: 10px;
+    margin-right: 10px;
+
+    .titulo-seccion {
+      color: $white;
+    }
+
+    & time {
+      color: $white;
+      line-height: 2.5;
+    }
+
     .head-resumen {
       display: flex;
       flex-direction: row;
@@ -27,34 +42,78 @@
 
     .indicadores {
       display: grid;
-      grid-template: repeat(2, 1fr) / repeat(4, 1fr);
+      grid-template: 1fr / 1fr;
 
       .renta-variable {
+        padding-left: 0;
+        padding-right: 0;
+        margin: 5px;
+
         .card-body {
+          padding-left: 5px;
+          padding-right: 5px;
+          background-color: $secondary;
+          color: $white;
+
           .indicador-general {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            font-size: $fzcard-finanzas;
+            .indice {
+              font-size: $fzcard-finanzasIndice;
+              font-weight: $fzcard-headweight;
+            }
+
+            .cotizacion {
+              font-size: $fzcard-finanzas;
+              font-weight: $fzcard-headweight;
+              text-align: center;
+            }
           }
 
           .indicador-variacion {
             display: flex;
             flex-direction: row;
             justify-content: flex-end;
-            font-size: $fzcard-finanzas;
+
+            & p {
+              font-size: $fzcard-finanzas;
+            }
+
+            & p:first-child {
+              margin-right: 5px;
+            }
           }
         }
       }
 
       .indicador-economico {
+        padding-left: 0;
+        padding-right: 0;
+        margin: 5px;
+
         .card-body {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+          padding-left: 5px;
+          padding-right: 5px;
+          background-color: $secondary;
+          color: $white;
+
           .indicador-general {
             text-align: center;
+
+            .indice {
+              font-size: $fzcard-finanzasIndice;
+              font-weight: $fzcard-headweight;
+            }
           }
 
           .indicador-variacion {
             text-align: center;
+
+            .cotizacion {
+              font-size: $fzcard-finanzas;
+              font-weight: $fzcard-headweight;
+            }
           }
         }
       }
@@ -62,20 +121,57 @@
   }
 
   .login {
-    .recupera-contraseña {
-      display: flex;
-      flex-direction: row;
-      justify-content: flex-start;
+    margin-left: 10px;
+    color: $white;      
+    font-weight: 500;
+
+    & form {
+      margin-top: 22px;
+      padding: 0 40px;
+
+      .ingresar {
+        margin-bottom: 20px;
+
+        .btn {
+          background-color: $primary-complement;
+          border: none;
+        }
+
+        #recuperaContrasena {
+          margin-left: 20px;
+        }
+      }
+
+      .little {
+        font-size: $little-size;
+      }
+
+      #ingresaEmail {
+        margin-bottom: 10px;
+      }
+
+      #ingresaPassword {
+        margin-bottom: 10px;
+      }
+
+      .registro {
+        #registro {      
+          margin-left: 20px;
+        }
+      }
     }
   }
 }
 
 .blog-calculadora {
+  margin-top: 70px;
+  margin-bottom: 70px;
+
   .blog {
     .articulos {
       display: flex;
       flex-direction: row;
-      justify-content: space-around;
+      justify-content: space-between;
     }
   }
 
@@ -84,11 +180,21 @@
       display: flex;
       flex-direction: row;
       justify-content: space-around;
+
+      .grafico {
+        & img {
+          height: 76%;
+          width: 100%;
+        }
+      }
     }
   }
 }
 
 .noticias {
+  margin-top: 70px;
+  margin-bottom: 70px;
+
   .cards-noticias {
     display: flex;
     flex-direction: row;
@@ -97,6 +203,8 @@
 }
 
 .footer {
+  margin-top: 70px;
+
   .footer-links {
     display: flex;
     flex-direction: row;
