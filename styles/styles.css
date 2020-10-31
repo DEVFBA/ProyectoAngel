@@ -2,6 +2,13 @@
 /* Colores */
 /* Fuentes */
 /* Tamaños y envergaduras de Fuente */
+/* Estilos Generales */
+.btn {
+  background-color: #214d72;
+  border: none;
+}
+
+/* Estilos del Navbar */
 .navbar {
   background-color: #1d3752;
 }
@@ -12,6 +19,7 @@
   color: #ffffff;
 }
 
+/* Estilos del Banner Principal -- Indicadores / Login */
 .banner-inicio {
   margin-top: 100px;
   margin-bottom: 70px;
@@ -19,7 +27,6 @@
   border-radius: 10px;
 }
 .banner-inicio .resumen-financiero {
-  border-radius: 10px;
   margin-right: 10px;
 }
 .banner-inicio .resumen-financiero .titulo-seccion {
@@ -130,25 +137,80 @@
   margin-left: 20px;
 }
 
+/* Estilos de la secciónn Blog-Calculadora -- Preview Blog / Calculadora Financiera */
 .blog-calculadora {
   margin-top: 70px;
   margin-bottom: 70px;
+}
+.blog-calculadora .blog {
+  margin-right: 10px;
 }
 .blog-calculadora .blog .articulos {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
+.blog-calculadora .blog .articulos .row .card {
+  padding: 0 5px;
+  margin: 5px 10px;
+}
+.blog-calculadora .blog .articulos .row .card .card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px 5px;
+}
+.blog-calculadora .blog .articulos .row .card .blog-summary .card-text {
+  margin-bottom: 0.75rem;
+}
+.blog-calculadora .calculadoras .subtitulo-seccion {
+  font-size: 20px;
+  text-align: center;
+}
 .blog-calculadora .calculadoras .calculadora {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  margin-top: 25px;
 }
-.blog-calculadora .calculadoras .calculadora .grafico img {
+.blog-calculadora .calculadoras .calculadora .row .datos {
+  font-size: 0.75rem;
+  font-weight: bold;
+  padding: 0;
+  margin-right: 10px;
+}
+.blog-calculadora .calculadoras .calculadora .row .datos .periodos {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.blog-calculadora .calculadoras .calculadora .row .datos #montoInicial,
+.blog-calculadora .calculadoras .calculadora .row .datos #ahorroMensual {
+  font-size: 0.75rem;
+  width: 130px;
+  margin-bottom: 10px;
+  margin-right: 3px;
+}
+.blog-calculadora .calculadoras .calculadora .row .datos #rendimiento,
+.blog-calculadora .calculadoras .calculadora .row .datos #periodos {
+  font-size: 0.75rem;
+  width: 110px;
+  margin-bottom: 10px;
+  margin-right: 5px;
+}
+.blog-calculadora .calculadoras .calculadora .row .datos select {
+  font-size: 0.75rem;
+}
+.blog-calculadora .calculadoras .calculadora .row .grafico {
+  padding: 0;
+}
+.blog-calculadora .calculadoras .calculadora .row .grafico img {
   height: 76%;
   width: 100%;
 }
 
+/* Estilos de la sección de noticias */
 .noticias {
   margin-top: 70px;
   margin-bottom: 70px;
@@ -159,6 +221,7 @@
   justify-content: space-around;
 }
 
+/* Estilos del footer */
 .footer {
   margin-top: 70px;
 }
