@@ -1,11 +1,108 @@
 @charset "UTF-8";
 /* Colores */
+/* Opción de Paleta de Colores 1 */
+/* Opción de Paleta de Colores 2 */
+/* $primary: #3A3A98;
+$primary-complement: #5256BC;
+$secondary: #527CBC;
+$secondary-complement: #4AB1D8;
+$white: #ffffff; */
+/* Opción de Paleta de Colores 3 */
+/* $primary: #494E6B;
+$primary-complement: #98878F;
+$secondary: #958E6D;
+$secondary-complement: #192231;
+$white: #ffffff; */
+/* Opción de Paleta de Colores 4 -- no estoy seguro*/
+/* $primary: #0F1626;
+$primary-complement: #AB987A;
+$secondary: #FF533D;
+$secondary-complement: #F5F5F5;
+$white: #ffffff; */
+/* Opción de Paleta de Colores 5 -- no estoy seguro*/
+/* $primary: #0B3C5D;
+$primary-complement: #328CC1;
+$secondary: #D9B310;
+$secondary-complement: #1D2731;
+$white: #ffffff; */
+/* Opción de Paleta de Colores 6 */
+/* $primary: #F7F5E6;
+$primary-complement: #333A56;
+$secondary: #52658F;
+$secondary-complement: #E8E8E8;
+$white: #ffffff; */
 /* Fuentes */
 /* Tamaños y envergaduras de Fuente */
+/* Estilos para los cards que contengan resúmen de ya sea una noticia o una entrada del blog */
+.summaryCard {
+  background-color: #50bfc3;
+  padding: 0 5px;
+  margin: 5px 10px;
+}
+.summaryCard .summaryCard-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px 5px;
+}
+.summaryCard .summaryCard-body .summaryCard-head {
+  flex: 1;
+  margin-bottom: 0.75rem;
+}
+.summaryCard .summaryCard-body .summaryCard-content .card-text {
+  margin-bottom: 0.75rem;
+  flex: 1;
+}
+.summaryCard .summaryCard-body .summaryCard-button {
+  flex: 1;
+  margin-bottom: 0.75rem;
+  line-height: 100%;
+}
+.summaryCard .summaryCard-body .summaryCard-footer {
+  flex: 1;
+  margin-bottom: 0.75rem;
+}
+
+/* Estilos para el footer de toda la página -- _footer.scss*/
+.footer {
+  background-color: #214d72;
+  color: #ffffff;
+  margin-top: 70px;
+}
+.footer .container {
+  padding: 80px 0;
+}
+.footer .container .row .footer-general {
+  margin-right: 20px;
+}
+.footer .container .row .footer-general .redes-sociales picture {
+  margin-right: 10px;
+}
+.footer .container .row .footer-links {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.footer a {
+  color: #ffffff;
+}
+
 /* Estilos Generales */
 .btn {
   background-color: #214d72;
   border: none;
+}
+
+ul {
+  padding-left: 0;
+}
+
+li {
+  list-style: none;
+}
+
+body {
+  background-color: #2c7695;
 }
 
 /* Estilos del Navbar */
@@ -145,24 +242,6 @@
 .blog-calculadora .blog {
   margin-right: 10px;
 }
-.blog-calculadora .blog .articulos {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-.blog-calculadora .blog .articulos .row .card {
-  padding: 0 5px;
-  margin: 5px 10px;
-}
-.blog-calculadora .blog .articulos .row .card .card-body {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 10px 5px;
-}
-.blog-calculadora .blog .articulos .row .card .blog-summary .card-text {
-  margin-bottom: 0.75rem;
-}
 .blog-calculadora .calculadoras .subtitulo-seccion {
   font-size: 20px;
   text-align: center;
@@ -215,23 +294,9 @@
   margin-top: 70px;
   margin-bottom: 70px;
 }
-.noticias .cards-noticias {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-}
-
-/* Estilos del footer */
-.footer {
-  margin-top: 70px;
-}
-.footer .footer-links {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-}
-.footer .footer-links div ul li {
-  list-style: none;
+.noticias .card-deck .card {
+  padding: 0 5px;
+  margin: 5px 10px;
 }
 
 /*# sourceMappingURL=styles.css.map */

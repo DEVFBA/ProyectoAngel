@@ -1,9 +1,23 @@
 @use 'global' as *;
+@use 'summaryCards' as *;
+@use 'footer' as *;
 
 /* Estilos Generales */
 .btn {
   background-color: $primary-complement;
   border: none;
+}
+
+ul {
+  padding-left: 0;
+}
+
+li {
+  list-style: none;
+}
+
+body {
+  background-color: $secondary;
 }
 
 /* Estilos del Navbar */
@@ -177,32 +191,6 @@
 
   .blog {
     margin-right: 10px;
-
-    .articulos {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-
-      .row {
-        .card {
-          padding: 0 5px;
-          margin: 5px 10px;
-
-          .card-body {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            padding: 10px 5px;
-          }
-
-          .blog-summary {
-            .card-text {
-              margin-bottom: 0.75rem;
-            }
-          }
-        }
-      }
-    }
   }
 
   .calculadoras {
@@ -270,28 +258,10 @@
   margin-top: 70px;
   margin-bottom: 70px;
 
-  .cards-noticias {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-  }
-}
-
-/* Estilos del footer */
-.footer {
-  margin-top: 70px;
-
-  .footer-links {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-
-    & div {
-      & ul {
-        & li {
-          list-style: none;
-        }
-      }
+  .card-deck {
+    .card {
+      padding: 0 5px;
+      margin: 5px 10px;
     }
   }
 }
