@@ -5,6 +5,7 @@ $primary-complement: #214d72;
 $secondary: #2c7695;
 $secondary-complement: #50bfc3;
 $white: #ffffff;
+$black: #000000;
 
 /* Opción de Paleta de Colores 2 */
 /* $primary: #3A3A98;
@@ -42,9 +43,19 @@ $secondary-complement: #E8E8E8;
 $white: #ffffff; */
 
 /* Fuentes */
+$principal: 'Nunito', sans-serif;
+$content: 'Lato', sans-serif;
+/* $content: 'Montserrat', sans-serif;
+$content: 'Open Sans', sans-serif;
+$content: 'Poppins', sans-serif;
+$content: 'Roboto', sans-serif; */
+
 
 /* Tamaños y envergaduras de Fuente */
 $fzcard-finanzasIndice: 15px;
 $fzcard-finanzas: 12px;
 $little-size: 12px;
 $fzcard-headweight: bold;
+$title-size: 24px;
+$subtitle-size: 20px;
+$content-size: 16px;

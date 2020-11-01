@@ -6,6 +6,10 @@
   padding: 0 5px;
   margin: 5px 10px;
 
+  & img {
+    height: 25%;
+  }
+
   .summaryCard-body {
     display: flex;
     flex-direction: column;
