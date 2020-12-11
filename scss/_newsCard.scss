@@ -1,0 +1,16 @@
+/* Estilos para las cards de Noticias */
+
+@use 'global' as *;
+
+.news-card {
+  background-color: $secondary-complement;
+
+  & a {
+    color: $black;
+  }
+
+  & img {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+}

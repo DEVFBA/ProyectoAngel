@@ -37,7 +37,7 @@ $content: 'Open Sans', sans-serif;
 $content: 'Poppins', sans-serif;
 $content: 'Roboto', sans-serif; */
 /* Tamaños y envergaduras de Fuente */
-/* Estilos para los cards que contengan resúmen de ya sea una noticia o una entrada del blog */
+/* Estilos para los cards que contengan resúmen de una entrada del blog */
 .summaryCard {
   background-color: #50bfc3;
   padding: 0 5px;
@@ -68,6 +68,18 @@ $content: 'Roboto', sans-serif; */
 .summaryCard .summaryCard-body .summaryCard-footer {
   flex: 1;
   margin-bottom: 0.75rem;
+}
+
+/* Estilos para las cards de Noticias */
+.news-card {
+  background-color: #50bfc3;
+}
+.news-card a {
+  color: #000000;
+}
+.news-card img {
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 /* Estilos para el footer de toda la página -- _footer.scss*/
@@ -106,11 +118,6 @@ body {
   font-family: "Lato", sans-serif;
 }
 
-.btn {
-  background-color: #214d72;
-  border: none;
-}
-
 ul {
   padding-left: 0;
 }
@@ -119,8 +126,13 @@ li {
   list-style: none;
 }
 
-.titulo-seccion {
+h1, h2, h3, h4, h5, h6 {
   font-family: "Nunito", sans-serif;
+}
+
+.btn {
+  background-color: #214d72;
+  border: none;
 }
 
 /* Estilos del Navbar */
@@ -309,9 +321,8 @@ li {
 .blog-calculadora .calculadoras .calculadora .row .grafico {
   padding: 0;
 }
-.blog-calculadora .calculadoras .calculadora .row .grafico img {
-  height: 76%;
-  width: 100%;
+.blog-calculadora .calculadoras .calculadora .row .grafico #chartInversion {
+  background-color: white;
 }
 
 /* Estilos de la sección de noticias */

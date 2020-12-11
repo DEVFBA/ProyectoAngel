@@ -9,7 +9,10 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="styles/styles.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Montserrat&family=Nunito&family=Open+Sans&family=Poppins&family=Roboto&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato&family=Montserrat&family=Nunito&family=Open+Sans&family=Poppins&family=Roboto&display=swap"
+      rel="stylesheet"
+    />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1.0, user-scalable=no"
@@ -65,11 +68,14 @@
                   <div class="card-body">
                     <div class="indicador-general">
                       <h6 class="indice">BMV IPC</h6>
-                      <h6 class="cotizacion text-success">38,707.72</h6><!--Sólo se pone clase text-success de muestra-->
+                      <h6 class="cotizacion text-success" id="puntosBMV">38,707.72</h6>
+                      <!--Sólo se pone clase text-success de muestra-->
                     </div>
                     <div class="indicador-variacion">
-                      <p class="text-success">+35.56</p><!--Sólo se pone class text-success de muestra-->
-                      <p class="text-success">(0.34%)</p><!--Sólo se pone class text-success de muestra-->
+                      <p class="text-success" id="variacionBMV">+35.56</p>
+                      <!--Sólo se pone class text-success de muestra-->
+                      <p class="text-success" id="varPorcBMV">(0.34%)</p>
+                      <!--Sólo se pone class text-success de muestra-->
                     </div>
                   </div>
                 </div>
@@ -78,11 +84,14 @@
                   <div class="card-body">
                     <div class="indicador-general">
                       <h6 class="indice">Dow Jones</h6>
-                      <h6 class="cotizacion text-danger">38,707.72</h6><!--Sólo se agrega class text-danger de muestra-->
+                      <h6 class="cotizacion text-danger">38,707.72</h6>
+                      <!--Sólo se agrega class text-danger de muestra-->
                     </div>
                     <div class="indicador-variacion">
-                      <p class="text-danger">-35.56</p><!--Sólo se agrega class text-danger de muestra-->
-                      <p class="text-danger">(-0.34%)</p><!--Sólo se agrega class text-danger de muestra-->
+                      <p class="text-danger">-35.56</p>
+                      <!--Sólo se agrega class text-danger de muestra-->
+                      <p class="text-danger">(-0.34%)</p>
+                      <!--Sólo se agrega class text-danger de muestra-->
                     </div>
                   </div>
                 </div>
@@ -91,11 +100,14 @@
                   <div class="card-body">
                     <div class="indicador-general">
                       <h6 class="indice">NASDAQ</h6>
-                      <h6 class="cotizacion text-success">38,707.72</h6><!--Sólo se agrega text-success como muestra-->
+                      <h6 class="cotizacion text-success">38,707.72</h6>
+                      <!--Sólo se agrega text-success como muestra-->
                     </div>
                     <div class="indicador-variacion">
-                      <p class="text-success">+35.56</p><!--Sólo se agrega text-success como muestra-->
-                      <p class="text-success">(0.34%)</p><!--Sólo se agrega text-sucess como muestra-->
+                      <p class="text-success">+35.56</p>
+                      <!--Sólo se agrega text-success como muestra-->
+                      <p class="text-success">(0.34%)</p>
+                      <!--Sólo se agrega text-sucess como muestra-->
                     </div>
                   </div>
                 </div>
@@ -104,11 +116,14 @@
                   <div class="card-body">
                     <div class="indicador-general">
                       <h6 class="indice">S&P 500</h6>
-                      <h6 class="cotizacion text-danger">38,707.72</h6><!--Sólo se agrega text-danger como muestra-->
+                      <h6 class="cotizacion text-danger">38,707.72</h6>
+                      <!--Sólo se agrega text-danger como muestra-->
                     </div>
                     <div class="indicador-variacion">
-                      <p class="text-danger">+35.56</p><!--Sólo se agrega text-danger como muestra-->
-                      <p class="text-danger">(0.34%)</p><!--Sólo se agrega text-danger como muestra-->
+                      <p class="text-danger">+35.56</p>
+                      <!--Sólo se agrega text-danger como muestra-->
+                      <p class="text-danger">(0.34%)</p>
+                      <!--Sólo se agrega text-danger como muestra-->
                     </div>
                   </div>
                 </div>
@@ -215,8 +230,6 @@
         <!-- Blog -->
         <div class="col-sm blog">
           <h3 class="titulo-seccion">Blog</h3>
-          <!-- <div class="articulos container"> -->
-          <!-- <div class="row"> -->
           <div class="card-deck">
             <div
               class="card col-sm text-center summaryCard"
@@ -293,8 +306,6 @@
               </div>
             </div>
           </div>
-          <!-- </div> -->
-          <!-- </div> -->
         </div>
         <!-- Calculadoras Financieras -->
         <div class="col-sm calculadoras">
@@ -303,28 +314,28 @@
           <form action="" class="container calculadora">
             <div class="row">
               <div class="datos col-sm">
-                <label for="montoInicial">Inversión Inicial</label>
+                <!-- <label for="montoInicial">Inversión Inicial</label>
                 <input
                   type="number"
                   class="form-control"
                   id="montoInicial"
                   placeholder="Monto Inicial"
-                />
-                <label for="ahorroMensual">Ahorro Mensual</label>
+                /> -->
+                <label for="ahorroMensual" id="aportacionInversion">Monto Aportación</label>
                 <input
                   type="number"
                   class="form-control"
                   id="ahorroMensual"
                   placeholder="Ahorro Mensual"
                 />
-                <label for="rendimiento">Tasa Rendimiento</label>
+                <label for="rendimiento" id="rendimientoInversion">Tasa Rendimiento</label>
                 <input
                   type="number"
                   class="form-control"
                   id="rendimiento"
                   placeholder="Tasa Interés"
                 />
-                <label for="periodos">Periodos</label>
+                <label for="periodos" id="periodosInversion">Periodos</label>
                 <div class="periodos">
                   <input
                     type="number"
@@ -332,18 +343,24 @@
                     id="periodos"
                     placeholder="No. Periodos"
                   />
-                  <select class="form-control">
+                  <select class="form-control" id="frecuenciaInversion">
                     <option>Años</option>
                     <option>Meses</option>
                   </select>
                 </div>
-                <button type="button" class="btn btn-primary">Calcular</button>
+                <div class="calculo container">
+                  <div class="row">
+                    <div class="col-sm">
+                      <button type="button" class="btn btn-primary" id="btnCalcular">Calcular</button>
+                    </div>
+                    <div class="col-sm">
+                      <h5 id="muestraResultado"></h5>
+                    </div>
+                  </div>
+                </div>
               </div>
               <div class="grafico col-sm">
-                <img
-                  src="./images/generic_area_graph.gif"
-                  alt="Gráfico"
-                /><!-- Agregar el label del monto calculado -->
+                <canvas id="chartInversion"></canvas><!-- Agregar el label del monto calculado -->
               </div>
             </div>
           </form>
@@ -354,8 +371,58 @@
     <!-- Sección 2 Noticias -->
     <div class="container noticias">
       <h3 class="titulo-seccion">Noticias</h3>
-      <!-- <div class="cards-noticias container"> -->
-      <!-- <div class="row"> -->
+      <div class="card-deck">
+        <div class="card mb-3 news-card" style="max-width: 540px">
+          <div class="row no-gutters">
+            <div class="col-md-4">
+              <img
+                src="./images/noticias_generica.jpg"
+                class="card-img"
+                alt="Noticia"
+              />
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <a
+                  href="https://mx.investing.com/news/coronavirus/mexico-reporta-6000-casos-nuevos-de-coronavirus-2037041"
+                  ><h5 class="card-title">
+                    México reporta 6,000 casos nuevos de Coronavirus
+                  </h5></a
+                >
+                <small class="text-muted"
+                  >Fuente &nbsp; &nbsp;
+                  <a href="https://mx.investing.com/">Investing.com</a></small
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card mb-3 news-card" style="max-width: 540px">
+          <div class="row no-gutters">
+            <div class="col-md-4">
+              <img
+                src="./images/noticias_generica.jpg"
+                class="card-img"
+                alt="Noticia"
+              />
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <a href="https://mx.investing.com/news/stock-market-news/streaming-busca-solucionar-crisis-de-la-tv-de-paga-en-estados-unidos-2037111">
+                  <h5 class="card-title">
+                    Streaming busca solucionar crisis de la TV de paga en...
+                  </h5>
+                </a>
+                <small class="text-muted"
+                  >Fuente &nbsp; &nbsp;
+                  <a href="https://mx.investing.com/">Investing.com</a></small
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--       <h3 class="titulo-seccion">Noticias</h3>
       <div class="card-deck">
         <div class="card col-sm text-center summaryCard" style="width: 18rem">
           <img
@@ -369,11 +436,6 @@
                 México reporta 6,000 casos nuevos de Coronavirus
               </h5>
             </div>
-            <!--                 <div class="summaryCard-content">
-                  <p class="card-text">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  </p>
-                </div> -->
             <div class="summaryCard-button">
               <a href="https://mx.investing.com/news/coronavirus/mexico-reporta-6000-casos-nuevos-de-coronavirus-2037041" class="btn btn-primary">Leer más</a>
             </div>
@@ -398,11 +460,6 @@
                 Streaming busca solucionar crisis de la TV de paga en...
               </h5>
             </div>
-            <!--                 <div class="summaryCard-content">
-                  <p class="card-text">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  </p>
-                </div> -->
             <div class="summaryCard-button">
               <a href="https://mx.investing.com/news/stock-market-news/streaming-busca-solucionar-crisis-de-la-tv-de-paga-en-estados-unidos-2037111" class="btn btn-primary">Leer más</a>
             </div>
@@ -427,11 +484,6 @@
                 AT&T es el operador con más quejas y mayor portabilidad no...
               </h5>
             </div>
-            <!--                 <div class="summaryCard-content">
-                  <p class="card-text">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  </p>
-                </div> -->
             <div class="summaryCard-button">
               <a href="https://mx.investing.com/news/stock-market-news/att-es-el-operador-con-mas-quejas-y-mayor-portabilidad-no-consentida-2037112" class="btn btn-primary">Leer más</a>
             </div>
@@ -456,11 +508,6 @@
                 Mezcla mexicana de petróleo pierde 12.2% en octubre: cierra...
               </h5>
             </div>
-            <!--                 <div class="summaryCard-content">
-                  <p class="card-text">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  </p>
-                </div> -->
             <div class="summaryCard-button">
               <a href="https://mx.investing.com/news/stock-market-news/mezcla-mexicana-de-petroleo-pierde-122-en-octubre-cierra-en-3258-dolares-2037023" class="btn btn-primary">Leer más</a>
             </div>
@@ -485,11 +532,6 @@
                 Fitch Ratifica la Calificación del Crédito Bancario de...
               </h5>
             </div>
-            <!--                 <div class="summaryCard-content">
-                  <p class="card-text">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  </p>
-                </div> -->
             <div class="summaryCard-button">
               <a href="https://mx.investing.com/news/economy/fitch-ratifica-la-calificacion-del-credito-bancario-de-tultepec-estado-de-mexico-2037017" class="btn btn-primary">Leer más</a>
             </div>
@@ -501,9 +543,7 @@
             </div>
           </div>
         </div>
-      </div>
-      <!-- </div> -->
-      <!-- </div> -->
+      </div> -->
     </div>
 
     <!-- Footer -->
@@ -597,5 +637,7 @@
       integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s"
       crossorigin="anonymous"
     ></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <script src="js/index.js"></script>
   </body>
 </html>

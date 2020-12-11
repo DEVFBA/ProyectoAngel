@@ -1,5 +1,6 @@
 @use 'global' as *;
 @use 'summaryCards' as *;
+@use 'newsCard' as *;
 @use 'footer' as *;
 @use 'underConstruction' as *;
 
@@ -7,11 +8,6 @@
 body {
   background-color: $secondary;
   font-family: $content;
-}
-
-.btn {
-  background-color: $primary-complement;
-  border: none;
 }
 
 ul {
@@ -22,8 +18,13 @@ li {
   list-style: none;
 }
 
-.titulo-seccion {
+h1, h2, h3, h4, h5, h6 {
   font-family: $principal;
+}
+
+.btn {
+  background-color: $primary-complement;
+  border: none;
 }
 
 /* Estilos del Navbar */
@@ -256,9 +257,8 @@ li {
         .grafico {
           padding: 0;
 
-          & img {
-            height: 76%;
-            width: 100%;
+          #chartInversion {
+            background-color: white;
           }
         }
       }
