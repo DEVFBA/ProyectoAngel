@@ -149,10 +149,6 @@ btnCalcular.addEventListener('click', () => {
         arrayAportaciones.push(arrayVDT[i].totalAportado);
     }
 
-    console.log(arrayVDT);
-    console.log(arrayAportaciones);
-    console.log(arrayInversionTotal);
-
     graficaInversion(chartInversion, arrayLabels, arrayAportaciones, arrayInversionTotal);
 
     return muestraResultado.innerHTML = `$${valorFuturoAportaciones}`;
@@ -168,7 +164,7 @@ btnCalcular.addEventListener('click', () => {
 /*************************** TESTING ****************************/
 
 
-// Graficación 
+// Graficación
 
 //console.log(generaArrayInversion(500, 12, 10));
 /*
