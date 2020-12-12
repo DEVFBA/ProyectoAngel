@@ -1,6 +1,6 @@
 /******************** VARIABLES Y CONSTANTES ********************/
 
-// CONSTANTES
+//// CONSTANTES
 
 const montoInicialInversion                 = document.getElementById("montoInicial");
 const aportacionMensualInversion            = document.getElementById("ahorroMensual");
@@ -10,15 +10,29 @@ const frecuenciaInversion                   = document.getElementById("frecuenci
 const muestraResultado                      = document.getElementById("muestraResultado"); //Revisar si se queda
 const btnCalcular                           = document.getElementById("btnCalcular");
 const chartInversion                        = document.getElementById("chartInversion");
+const fechaHoy                              = document.getElementById("fechaResumen");
 
-// TEMPORALES PARA MUESTRA DE PROYECTO
+//// VARIABLES
 
+let fecha                                   = new Date();
+let dia                                     = fecha.getDate();
+let mes                                     = fecha.getMonth();
+let anio                                    = fecha.getFullYear();
 
-// VARIABLES
+//// TEMPORALES PARA MUESTRA DE PROYECTO
 
 /************************** FUNCIONES ***************************/
 
-// FINANCIERAS
+//// GENERALES
+
+/* Genera la fecha en formato dd / mm / aaaa */
+const formateaFecha = (dia, mes, anio) => {
+    let stringFecha = "";
+
+    return `${dia} / ${mes + 1} / ${anio}`
+}
+
+//// FINANCIERAS
 
 const calculaTasaMensual = (tasaAnual) => {
     let tasaMensual = 0;
@@ -26,7 +40,6 @@ const calculaTasaMensual = (tasaAnual) => {
     tasaMensual = (Math.pow((1 + tasaAnual), (1/12))) - 1;
 
     return tasaMensual;
-    //return tasaMensual.toFixed(4);
 }
 
 const calculaVFAnualidadAnticipada = (aportacion, tasa, periodos) => {
@@ -54,7 +67,7 @@ const calculaVFAnualidadVencida = (aportacion, tasa, periodos) => {
 }
 
 
-// GRAFICACION
+//// GRAFICACION
 
 const generaArrayInversion = (aportacion, tasa, periodos) => {
     let arrayInversion = [];
@@ -113,11 +126,16 @@ const graficaInversion = (chart, labels, aportaciones, totales) => {
 }
 
 
-// TEMPORALES PARA MUESTRA DE PROYECTO
+//// TEMPORALES PARA MUESTRA DE PROYECTO
 
 
 /*************************** EVENTOS ****************************/
 
+///// CARGA DE PAGINA
+
+fechaHoy.innerHTML = formateaFecha(dia, mes, anio);
+
+//// BOTONES
 btnCalcular.addEventListener('click', () => {
     let aportacion                          = parseFloat(aportacionMensualInversion.value);
     let tasa                                = parseFloat(rendimientoInversion.value / 100);
@@ -154,76 +172,4 @@ btnCalcular.addEventListener('click', () => {
     return muestraResultado.innerHTML = `$${valorFuturoAportaciones}`;
 })
 
-
-
-
-
-
-
-
 /*************************** TESTING ****************************/
-
-
-// Graficación
-
-//console.log(generaArrayInversion(500, 12, 10));
-/*
-const array = generaArrayInversion(500, 12, 10);
-
-let dataArray = [];
-
-let dataArray2 = [];
-
-for(let i = 0; i < array.length; i++){
-    dataArray.push(array[i].montoTotal);
-}
-
-for(let i = 0; i < array.length; i++){
-    dataArray2.push(array[i].totalAportado);
-}
-*/
-
-//console.log(dataArray);
-//console.log(dataArray2);
-
-//var ctx = document.getElementById('myChart');
-/*
-var myChart = new Chart(chartInversion, {
-    type: 'line',
-    data: {
-        labels: Object.keys(generaArrayInversion(500, 12, 10)),
-        datasets: [{
-            label: 'Inversión',
-            data: dataArray,
-            backgroundColor: [
-                'rgba(255, 99, 132, 0.2)'
-            ],
-            borderColor: [
-                'rgba(255, 99, 132, 1)'
-            ],
-            borderWidth: 1,
-            fill: +1
-        },
-        {
-            label: 'Aportaciones',
-            data: dataArray2,
-            backgroundColor: [
-                'rgba(0, 255, 0, 0.2)'
-            ],
-            borderColor: [
-                'rgba(0, 255, 0, 1)'
-            ],
-            borderWidth: 1
-        }]
-    },
-    options: {
-        scales: {
-            yAxes: [{
-                ticks: {
-                    beginAtZero: true
-                }
-            }]
-        }
-    }
-});
-*/
