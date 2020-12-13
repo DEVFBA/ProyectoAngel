@@ -21,29 +21,31 @@ let anio                                    = fecha.getFullYear();
 
 //// TEMPORALES PARA MUESTRA DE PROYECTO
 
+const puntosBMV                             = document.getElementById("puntosBMV");
+const variacionBMV                          = document.getElementById("variacionBMV");
+const varPorcBMV                            = document.getElementById("varPorcBMV");
+
 /************************** FUNCIONES ***************************/
 
 //// GENERALES
 
 /* Genera la fecha en formato dd / mm / aaaa */
 const formateaFecha = (dia, mes, anio) => {
-    let stringFecha = "";
-
     return `${dia} / ${mes + 1} / ${anio}`
 }
 
 //// FINANCIERAS
 
 const calculaTasaMensual = (tasaAnual) => {
-    let tasaMensual = 0;
+    let tasaMensual             = 0;
 
-    tasaMensual = (Math.pow((1 + tasaAnual), (1/12))) - 1;
+    tasaMensual = (Math.pow((1 + tasaAnual), (1 / 12))) - 1;
 
     return tasaMensual;
 }
 
 const calculaVFAnualidadAnticipada = (aportacion, tasa, periodos) => {
-    let valorFuturoAnualidad = 0;
+    let valorFuturoAnualidad    = 0;
 
     valorFuturoAnualidad = ((aportacion * (1 + tasa)) * (((Math.pow((1 + tasa), periodos)) - 1) / tasa));
 
@@ -55,7 +57,7 @@ const calculaVFAnualidadAnticipada = (aportacion, tasa, periodos) => {
 }
 
 const calculaVFAnualidadVencida = (aportacion, tasa, periodos) => {
-    let valorFuturoAnualidad = 0;
+    let valorFuturoAnualidad    = 0;
 
     valorFuturoAnualidad = (aportacion * (((Math.pow((1 + tasa), periodos)) - 1) / tasa));
 
@@ -70,7 +72,7 @@ const calculaVFAnualidadVencida = (aportacion, tasa, periodos) => {
 //// GRAFICACION
 
 const generaArrayInversion = (aportacion, tasa, periodos) => {
-    let arrayInversion = [];
+    let arrayInversion                      = [];
 
     for(let i = 1; i <= periodos; i++){
         arrayInversion.push({
@@ -83,7 +85,7 @@ const generaArrayInversion = (aportacion, tasa, periodos) => {
 }
 
 const graficaInversion = (chart, labels, aportaciones, totales) => {
-    let myChart = new Chart(chart, {
+    let myChart                             = new Chart(chart, {
         type: 'line',
         data: {
             labels: labels,
@@ -128,14 +130,58 @@ const graficaInversion = (chart, labels, aportaciones, totales) => {
 
 //// TEMPORALES PARA MUESTRA DE PROYECTO
 
+const cambiaPuntosBMV = () => {
+    let variacionPuntos                     = Math.round(Math.random() * 80000) / 100;
+    let puntosNuevos                        = 0;
+    let puntosIniciales                     = 38707.72;
+    let variacionPorcentual                 = 0;
+    let fecha                               = new Date();
+    let segundo                             = fecha.getSeconds();
+
+    let cambioString = "";
+
+    if(segundo === 0 || (segundo % 2) === 0){
+        puntosNuevos = (puntosIniciales + variacionPuntos).toFixed(2);
+        variacionBMV.innerHTML = `+${variacionPuntos}`;
+        puntosBMV.classList.remove("text-danger");
+        puntosBMV.classList.add("text-success");
+        variacionBMV.classList.remove("text-danger");
+        variacionBMV.classList.add("text-success");
+        varPorcBMV.classList.remove("text-danger");
+        varPorcBMV.classList.add("text-success");
+        cambioString = ("positivo");
+    } else {
+        puntosNuevos = (puntosIniciales - variacionPuntos).toFixed(2);
+        variacionBMV.innerHTML = `-${variacionPuntos}`;
+        puntosBMV.classList.remove("text-success");
+        puntosBMV.classList.add("text-danger");
+        variacionBMV.classList.remove("text-success");
+        variacionBMV.classList.add("text-danger");
+        varPorcBMV.classList.remove("text-success");
+        varPorcBMV.classList.add("text-danger");
+        cambioString = ("negativo");
+    }
+
+    variacionPorcentual = ((variacionPuntos / puntosIniciales) * 100).toFixed(2);
+
+    puntosBMV.innerHTML = puntosNuevos.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');//38,707.72
+    varPorcBMV.innerHTML = `(${variacionPorcentual}%)`
+
+    //console.log(`Inicia con ${puntosIniciales} y hay un cambio ${cambioString} de ${variacionPuntos} dando ${puntosNuevos} y variación Porcentual de ${variacionPorcentual}`);
+}
 
 /*************************** EVENTOS ****************************/
 
-///// CARGA DE PAGINA
+//// TEMPORALES PARA MUESTRA DE PROYECTO
+
+setInterval(cambiaPuntosBMV, 3000);
+
+//// CARGA DE PAGINA
 
 fechaHoy.innerHTML = formateaFecha(dia, mes, anio);
 
 //// BOTONES
+
 btnCalcular.addEventListener('click', () => {
     let aportacion                          = parseFloat(aportacionMensualInversion.value);
     let tasa                                = parseFloat(rendimientoInversion.value / 100);
@@ -168,6 +214,8 @@ btnCalcular.addEventListener('click', () => {
     }
 
     graficaInversion(chartInversion, arrayLabels, arrayAportaciones, arrayInversionTotal);
+
+    chartInversion.style.backgroundColor = "#ffffff";
 
     return muestraResultado.innerHTML = `$${valorFuturoAportaciones}`;
 })
