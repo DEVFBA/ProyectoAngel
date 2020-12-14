@@ -24,6 +24,15 @@ let anio                                    = fecha.getFullYear();
 const puntosBMV                             = document.getElementById("puntosBMV");
 const variacionBMV                          = document.getElementById("variacionBMV");
 const varPorcBMV                            = document.getElementById("varPorcBMV");
+const puntosDowJones                        = document.getElementById("puntosDowJones");
+const variacionDowJones                     = document.getElementById("variacionDowJones");
+const varPorcDowJones                       = document.getElementById("varPorcDowJones");
+const puntosNasdaq                          = document.getElementById("puntosNasdaq");
+const variacionNasdaq                       = document.getElementById("variacionNasdaq");
+const varPorcNasdaq                         = document.getElementById("varPorcNasdaq");
+const puntosSP500                          = document.getElementById("puntosSP500");
+const variacionSP500                       = document.getElementById("variacionSP500");
+const varPorcSP500                         = document.getElementById("varPorcSP500");
 
 /************************** FUNCIONES ***************************/
 
@@ -131,14 +140,12 @@ const graficaInversion = (chart, labels, aportaciones, totales) => {
 //// TEMPORALES PARA MUESTRA DE PROYECTO
 
 const cambiaPuntosBMV = () => {
-    let variacionPuntos                     = Math.round(Math.random() * 80000) / 100;
+    let variacionPuntos                     = Math.round(Math.random() * 100000) / 100;
     let puntosNuevos                        = 0;
     let puntosIniciales                     = 38707.72;
     let variacionPorcentual                 = 0;
     let fecha                               = new Date();
     let segundo                             = fecha.getSeconds();
-
-    let cambioString = "";
 
     if(segundo === 0 || (segundo % 2) === 0){
         puntosNuevos = (puntosIniciales + variacionPuntos).toFixed(2);
@@ -149,7 +156,6 @@ const cambiaPuntosBMV = () => {
         variacionBMV.classList.add("text-success");
         varPorcBMV.classList.remove("text-danger");
         varPorcBMV.classList.add("text-success");
-        cambioString = ("positivo");
     } else {
         puntosNuevos = (puntosIniciales - variacionPuntos).toFixed(2);
         variacionBMV.innerHTML = `-${variacionPuntos}`;
@@ -159,15 +165,114 @@ const cambiaPuntosBMV = () => {
         variacionBMV.classList.add("text-danger");
         varPorcBMV.classList.remove("text-success");
         varPorcBMV.classList.add("text-danger");
-        cambioString = ("negativo");
     }
 
     variacionPorcentual = ((variacionPuntos / puntosIniciales) * 100).toFixed(2);
 
     puntosBMV.innerHTML = puntosNuevos.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');//38,707.72
     varPorcBMV.innerHTML = `(${variacionPorcentual}%)`
+}
 
-    //console.log(`Inicia con ${puntosIniciales} y hay un cambio ${cambioString} de ${variacionPuntos} dando ${puntosNuevos} y variación Porcentual de ${variacionPorcentual}`);
+const cambiaPuntosDowJones = () => {
+    let variacionPuntos                     = Math.round(Math.random() * 100000) / 100;
+    let puntosNuevos                        = 0;
+    let puntosIniciales                     = 29861.55;
+    let variacionPorcentual                 = 0;
+    let fecha                               = new Date();
+    let segundo                             = fecha.getSeconds();
+
+    if(segundo === 0 || (segundo % 2) === 0){
+        puntosNuevos = (puntosIniciales - variacionPuntos).toFixed(2);
+        variacionDowJones.innerHTML = `-${variacionPuntos}`;
+        puntosDowJones.classList.remove("text-success");
+        puntosDowJones.classList.add("text-danger");
+        variacionDowJones.classList.remove("text-success");
+        variacionDowJones.classList.add("text-danger");
+        varPorcDowJones.classList.remove("text-success");
+        varPorcDowJones.classList.add("text-danger");
+    } else {
+        puntosNuevos = (puntosIniciales + variacionPuntos).toFixed(2);
+        variacionDowJones.innerHTML = `+${variacionPuntos}`;
+        puntosDowJones.classList.remove("text-danger");
+        puntosDowJones.classList.add("text-success");
+        variacionDowJones.classList.remove("text-danger");
+        variacionDowJones.classList.add("text-success");
+        varPorcDowJones.classList.remove("text-danger");
+        varPorcDowJones.classList.add("text-success");
+    }
+
+    variacionPorcentual = ((variacionPuntos / puntosIniciales) * 100).toFixed(2);
+
+    puntosDowJones.innerHTML = puntosNuevos.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');//38,707.72
+    varPorcDowJones.innerHTML = `(${variacionPorcentual}%)`
+}
+
+const cambiaPuntosNasdaq = () => {
+    let variacionPuntos                     = Math.round(Math.random() * 100000) / 100;
+    let puntosNuevos                        = 0;
+    let puntosIniciales                     = 12440.04;
+    let variacionPorcentual                 = 0;
+    let fecha                               = new Date();
+    let segundo                             = fecha.getSeconds();
+
+    if(segundo === 0 || (segundo % 2) === 0){
+        puntosNuevos = (puntosIniciales + variacionPuntos).toFixed(2);
+        variacionNasdaq.innerHTML = `+${variacionPuntos}`;
+        puntosNasdaq.classList.remove("text-danger");
+        puntosNasdaq.classList.add("text-success");
+        variacionNasdaq.classList.remove("text-danger");
+        variacionNasdaq.classList.add("text-success");
+        varPorcNasdaq.classList.remove("text-danger");
+        varPorcNasdaq.classList.add("text-success");
+    } else {
+        puntosNuevos = (puntosIniciales - variacionPuntos).toFixed(2);
+        variacionNasdaq.innerHTML = `-${variacionPuntos}`;
+        puntosNasdaq.classList.remove("text-success");
+        puntosNasdaq.classList.add("text-danger");
+        variacionNasdaq.classList.remove("text-success");
+        variacionNasdaq.classList.add("text-danger");
+        varPorcNasdaq.classList.remove("text-success");
+        varPorcNasdaq.classList.add("text-danger");
+    }
+
+    variacionPorcentual = ((variacionPuntos / puntosIniciales) * 100).toFixed(2);
+
+    puntosNasdaq.innerHTML = puntosNuevos.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');//38,707.72
+    varPorcNasdaq.innerHTML = `(${variacionPorcentual}%)`
+}
+
+const cambiaPuntosSP500 = () => {
+    let variacionPuntos                     = Math.round(Math.random() * 30000) / 100;
+    let puntosNuevos                        = 0;
+    let puntosIniciales                     = 3647.49;
+    let variacionPorcentual                 = 0;
+    let fecha                               = new Date();
+    let segundo                             = fecha.getSeconds();
+
+    if(segundo === 0 || (segundo % 2) === 0){
+        puntosNuevos = (puntosIniciales - variacionPuntos).toFixed(2);
+        variacionSP500.innerHTML = `-${variacionPuntos}`;
+        puntosSP500.classList.remove("text-success");
+        puntosSP500.classList.add("text-danger");
+        variacionSP500.classList.remove("text-success");
+        variacionSP500.classList.add("text-danger");
+        varPorcSP500.classList.remove("text-success");
+        varPorcSP500.classList.add("text-danger");
+    } else {
+        puntosNuevos = (puntosIniciales + variacionPuntos).toFixed(2);
+        variacionSP500.innerHTML = `+${variacionPuntos}`;
+        puntosSP500.classList.remove("text-danger");
+        puntosSP500.classList.add("text-success");
+        variacionSP500.classList.remove("text-danger");
+        variacionSP500.classList.add("text-success");
+        varPorcSP500.classList.remove("text-danger");
+        varPorcSP500.classList.add("text-success");
+    }
+
+    variacionPorcentual = ((variacionPuntos / puntosIniciales) * 100).toFixed(2);
+
+    puntosSP500.innerHTML = puntosNuevos.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');//38,707.72
+    varPorcSP500.innerHTML = `(${variacionPorcentual}%)`
 }
 
 /*************************** EVENTOS ****************************/
@@ -175,6 +280,9 @@ const cambiaPuntosBMV = () => {
 //// TEMPORALES PARA MUESTRA DE PROYECTO
 
 setInterval(cambiaPuntosBMV, 3000);
+setInterval(cambiaPuntosDowJones, 3000);
+setInterval(cambiaPuntosNasdaq, 3000);
+setInterval(cambiaPuntosSP500, 3000);
 
 //// CARGA DE PAGINA
 
