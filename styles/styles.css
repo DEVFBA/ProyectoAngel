@@ -37,87 +37,18 @@ $content: 'Open Sans', sans-serif;
 $content: 'Poppins', sans-serif;
 $content: 'Roboto', sans-serif; */
 /* Tamaños y envergaduras de Fuente */
-/* Estilos para los cards que contengan resúmen de una entrada del blog */
-.summaryCard {
-  background-color: #50bfc3;
-  padding: 0 5px;
-  margin: 5px 10px;
-}
-.summaryCard img {
-  height: 25%;
-}
-.summaryCard .summaryCard-body {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 10px 5px;
-}
-.summaryCard .summaryCard-body .summaryCard-head {
-  flex: 1;
-  margin-bottom: 0.75rem;
-}
-.summaryCard .summaryCard-body .summaryCard-content .card-text {
-  margin-bottom: 0.75rem;
-  flex: 1;
-}
-.summaryCard .summaryCard-body .summaryCard-button {
-  flex: 1;
-  margin-bottom: 0.75rem;
-  line-height: 100%;
-}
-.summaryCard .summaryCard-body .summaryCard-footer {
-  flex: 1;
-  margin-bottom: 0.75rem;
-}
-
-/* Estilos para las cards de Noticias */
-.news-card {
-  background-color: #50bfc3;
-}
-.news-card a {
-  color: #000000;
-}
-.news-card img {
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-/* Estilos para el footer de toda la página -- _footer.scss*/
-.footer {
-  background-color: #214d72;
-  color: #ffffff;
-  margin-top: 70px;
-}
-.footer .container {
-  padding: 80px 0;
-}
-.footer .container .row .footer-general {
-  margin-right: 20px;
-}
-.footer .container .row .footer-general .redes-sociales picture {
-  margin-right: 10px;
-}
-.footer .container .row .footer-links {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-}
-.footer a {
-  color: #ffffff;
-}
-
-.under-construction {
-  background-image: url(../images/construccion.jpg);
-  height: 50%;
-  width: 50%;
-}
-
+/*@use 'summaryCards' as *;
+@use 'newsCard' as *;
+@use 'footer' as *;
+@use 'underConstruction' as *; */
 /* Estilos Generales */
 body {
   background-color: #2c7695;
   font-family: "Lato", sans-serif;
+  padding-top: 3rem;
 }
 
+/*
 ul {
   padding-left: 0;
 }
@@ -127,213 +58,266 @@ li {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Nunito", sans-serif;
+  font-family: $principal;
 }
 
 .btn {
-  background-color: #214d72;
+  background-color: $primary-complement;
   border: none;
 }
-
+ */
 /* Estilos del Navbar */
-.navbar {
-  background-color: #1d3752;
-  font-family: "Nunito", sans-serif;
-}
-.navbar .navbar-brand {
-  color: #ffffff;
-  font-size: 24px;
-}
-.navbar .nav-item .nav-link {
-  color: #ffffff;
-  font-size: 20px;
-}
+/* .navbar {
+  background-color: $primary;
+  font-family: $principal;
 
+  .navbar-brand {
+    color: $white;
+    font-size: $title-size;
+  }
+
+  .nav-item {
+    .nav-link {
+      color: $white;
+      font-size: $subtitle-size;
+    }
+  }
+}
+ */
 /* Estilos del Banner Principal -- Indicadores / Login */
-.banner-inicio {
+/* .banner-inicio {
   margin-top: 100px;
   margin-bottom: 70px;
-  background-color: #000000;
+  //background-image: url(../images/stocks.jpg);
+  background-color: $black;
   border-radius: 10px;
-}
-.banner-inicio .resumen-financiero {
-  margin-right: 10px;
-}
-.banner-inicio .resumen-financiero .titulo-seccion {
-  color: #ffffff;
-}
-.banner-inicio .resumen-financiero time {
-  color: #ffffff;
-  line-height: 2.5;
-}
-.banner-inicio .resumen-financiero .head-resumen {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  vertical-align: middle;
-}
-.banner-inicio .resumen-financiero .indicadores {
-  display: grid;
-  grid-template: 1fr/1fr;
-}
-.banner-inicio .resumen-financiero .indicadores .renta-variable {
-  padding-left: 0;
-  padding-right: 0;
-  margin: 5px;
-  background-color: #ffffff;
-  opacity: 0.8;
-}
-.banner-inicio .resumen-financiero .indicadores .renta-variable .card-body {
-  padding-left: 5px;
-  padding-right: 5px;
-  background-color: #000000;
-  color: #ffffff;
-}
-.banner-inicio .resumen-financiero .indicadores .renta-variable .card-body .indicador-general .indice {
-  font-size: 15px;
-  font-weight: bold;
-}
-.banner-inicio .resumen-financiero .indicadores .renta-variable .card-body .indicador-general .cotizacion {
-  font-size: 12px;
-  font-weight: bold;
-  text-align: center;
-}
-.banner-inicio .resumen-financiero .indicadores .renta-variable .card-body .indicador-variacion {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-}
-.banner-inicio .resumen-financiero .indicadores .renta-variable .card-body .indicador-variacion p {
-  font-size: 12px;
-}
-.banner-inicio .resumen-financiero .indicadores .renta-variable .card-body .indicador-variacion p:first-child {
-  margin-right: 5px;
-}
-.banner-inicio .resumen-financiero .indicadores .indicador-economico {
-  padding-left: 0;
-  padding-right: 0;
-  margin: 5px;
-  opacity: 0.8;
-  background-color: #ffffff;
-}
-.banner-inicio .resumen-financiero .indicadores .indicador-economico .card-body {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  padding-left: 5px;
-  padding-right: 5px;
-  background-color: #000000;
-  color: #ffffff;
-}
-.banner-inicio .resumen-financiero .indicadores .indicador-economico .card-body .indicador-general {
-  text-align: center;
-}
-.banner-inicio .resumen-financiero .indicadores .indicador-economico .card-body .indicador-general .indice {
-  font-size: 15px;
-  font-weight: bold;
-}
-.banner-inicio .resumen-financiero .indicadores .indicador-economico .card-body .indicador-variacion {
-  text-align: center;
-}
-.banner-inicio .resumen-financiero .indicadores .indicador-economico .card-body .indicador-variacion .cotizacion {
-  font-size: 12px;
-  font-weight: bold;
-}
-.banner-inicio .login {
-  margin-left: 10px;
-  color: #ffffff;
-  font-weight: 500;
-}
-.banner-inicio .login form {
-  margin-top: 22px;
-  padding: 0 40px;
-}
-.banner-inicio .login form .ingresar {
-  margin-bottom: 20px;
-}
-.banner-inicio .login form .ingresar .btn {
-  background-color: #214d72;
-  border: none;
-}
-.banner-inicio .login form .ingresar #recuperaContrasena {
-  margin-left: 20px;
-}
-.banner-inicio .login form .little {
-  font-size: 12px;
-}
-.banner-inicio .login form #ingresaEmail {
-  margin-bottom: 10px;
-}
-.banner-inicio .login form #ingresaPassword {
-  margin-bottom: 10px;
-}
-.banner-inicio .login form .registro #registro {
-  margin-left: 20px;
-}
 
+  .resumen-financiero {
+    margin-right: 10px;
+
+    .titulo-seccion {
+      color: $white;
+    }
+
+    & time {
+      color: $white;
+      line-height: 2.5;
+    }
+
+    .head-resumen {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      vertical-align: middle;
+    }
+
+    .indicadores {
+      display: grid;
+      grid-template: 1fr / 1fr;
+
+      .renta-variable {
+        padding-left: 0;
+        padding-right: 0;
+        margin: 5px;
+        background-color: $white;
+        opacity: 0.8;
+
+        .card-body {
+          padding-left: 5px;
+          padding-right: 5px;
+          background-color: $black;
+          color: $white;
+
+          .indicador-general {
+            .indice {
+              font-size: $fzcard-finanzasIndice;
+              font-weight: $fzcard-headweight;
+            }
+
+            .cotizacion {
+              font-size: $fzcard-finanzas;
+              font-weight: $fzcard-headweight;
+              text-align: center;
+            }
+          }
+
+          .indicador-variacion {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+
+            & p {
+              font-size: $fzcard-finanzas;
+            }
+
+            & p:first-child {
+              margin-right: 5px;
+            }
+          }
+        }
+      }
+
+      .indicador-economico {
+        padding-left: 0;
+        padding-right: 0;
+        margin: 5px;
+        opacity: 0.8;
+        background-color: $white;
+
+        .card-body {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+          padding-left: 5px;
+          padding-right: 5px;
+          background-color: $black;
+          color: $white;
+
+          .indicador-general {
+            text-align: center;
+
+            .indice {
+              font-size: $fzcard-finanzasIndice;
+              font-weight: $fzcard-headweight;
+            }
+          }
+
+          .indicador-variacion {
+            text-align: center;
+
+            .cotizacion {
+              font-size: $fzcard-finanzas;
+              font-weight: $fzcard-headweight;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .login {
+    margin-left: 10px;
+    color: $white;
+    font-weight: 500;
+
+    & form {
+      margin-top: 22px;
+      padding: 0 40px;
+
+      .ingresar {
+        margin-bottom: 20px;
+
+        .btn {
+          background-color: $primary-complement;
+          border: none;
+        }
+
+        #recuperaContrasena {
+          margin-left: 20px;
+        }
+      }
+
+      .little {
+        font-size: $little-size;
+      }
+
+      #ingresaEmail {
+        margin-bottom: 10px;
+      }
+
+      #ingresaPassword {
+        margin-bottom: 10px;
+      }
+
+      .registro {
+        #registro {
+          margin-left: 20px;
+        }
+      }
+    }
+  }
+} */
 /* Estilos de la secciónn Blog-Calculadora -- Preview Blog / Calculadora Financiera */
-.blog-calculadora {
+/* .blog-calculadora {
   margin-top: 70px;
   margin-bottom: 70px;
-}
-.blog-calculadora .blog {
-  margin-right: 10px;
-}
-.blog-calculadora .calculadoras .subtitulo-seccion {
-  font-size: 20px;
-  text-align: center;
-}
-.blog-calculadora .calculadoras .calculadora {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  margin-top: 25px;
-}
-.blog-calculadora .calculadoras .calculadora .row .datos {
-  font-size: 0.75rem;
-  font-weight: bold;
-  padding: 0;
-  margin-right: 10px;
-}
-.blog-calculadora .calculadoras .calculadora .row .datos .periodos {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin-bottom: 10px;
-}
-.blog-calculadora .calculadoras .calculadora .row .datos #montoInicial,
-.blog-calculadora .calculadoras .calculadora .row .datos #ahorroMensual {
-  font-size: 0.75rem;
-  width: 130px;
-  margin-bottom: 10px;
-  margin-right: 3px;
-}
-.blog-calculadora .calculadoras .calculadora .row .datos #rendimiento,
-.blog-calculadora .calculadoras .calculadora .row .datos #periodos {
-  font-size: 0.75rem;
-  width: 110px;
-  margin-bottom: 10px;
-  margin-right: 5px;
-}
-.blog-calculadora .calculadoras .calculadora .row .datos select {
-  font-size: 0.75rem;
-}
-.blog-calculadora .calculadoras .calculadora .row .grafico {
-  padding: 0;
-}
-.blog-calculadora .calculadoras .calculadora .row .grafico #chartInversion {
-  width: 500px;
-  height: 200px;
-}
 
+  .blog {
+    margin-right: 10px;
+  }
+
+  .calculadoras {
+    .subtitulo-seccion {
+      font-size: 20px;
+      text-align: center;
+    }
+
+    .calculadora {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      margin-top: 25px;
+
+      .row {
+        .datos {
+          font-size: 0.75rem;
+          font-weight: bold;
+          padding: 0;
+          margin-right: 10px;
+
+          .periodos {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin-bottom: 10px;
+          }
+
+          #montoInicial,
+          #ahorroMensual {
+            font-size: 0.75rem;
+            width: 130px;
+            margin-bottom: 10px;
+            margin-right: 3px;
+          }
+
+          #rendimiento,
+          #periodos {
+            font-size: 0.75rem;
+            width: 110px;
+            margin-bottom: 10px;
+            margin-right: 5px;
+          }
+
+          & select {
+            font-size: 0.75rem;
+          }
+        }
+
+        .grafico {
+          padding: 0;
+
+          #chartInversion {
+            //background-color: white;
+            width: 500px;
+            height: 200px;
+          }
+        }
+      }
+    }
+  }
+} */
 /* Estilos de la sección de noticias */
-.noticias {
+/* .noticias {
   margin-top: 70px;
   margin-bottom: 70px;
+
+  .card-deck {
+    .card {
+      padding: 0 5px;
+      margin: 5px 10px;
+    }
+  }
 }
-.noticias .card-deck .card {
-  padding: 0 5px;
-  margin: 5px 10px;
-}
+ */
 
 /*# sourceMappingURL=styles.css.map */

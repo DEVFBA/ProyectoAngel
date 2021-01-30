@@ -1,15 +1,16 @@
 @use 'global' as *;
-@use 'summaryCards' as *;
+/*@use 'summaryCards' as *;
 @use 'newsCard' as *;
 @use 'footer' as *;
-@use 'underConstruction' as *;
+@use 'underConstruction' as *; */
 
 /* Estilos Generales */
-body {
+ body {
   background-color: $secondary;
   font-family: $content;
+  padding-top: 3rem;
 }
-
+/*
 ul {
   padding-left: 0;
 }
@@ -26,9 +27,9 @@ h1, h2, h3, h4, h5, h6 {
   background-color: $primary-complement;
   border: none;
 }
-
+ */
 /* Estilos del Navbar */
-.navbar {
+/* .navbar {
   background-color: $primary;
   font-family: $principal;
 
@@ -44,9 +45,9 @@ h1, h2, h3, h4, h5, h6 {
     }
   }
 }
-
+ */
 /* Estilos del Banner Principal -- Indicadores / Login */
-.banner-inicio {
+/* .banner-inicio {
   margin-top: 100px;
   margin-bottom: 70px;
   //background-image: url(../images/stocks.jpg);
@@ -197,10 +198,10 @@ h1, h2, h3, h4, h5, h6 {
       }
     }
   }
-}
+} */
 
 /* Estilos de la secciónn Blog-Calculadora -- Preview Blog / Calculadora Financiera */
-.blog-calculadora {
+/* .blog-calculadora {
   margin-top: 70px;
   margin-bottom: 70px;
 
@@ -267,10 +268,10 @@ h1, h2, h3, h4, h5, h6 {
       }
     }
   }
-}
+} */
 
 /* Estilos de la sección de noticias */
-.noticias {
+/* .noticias {
   margin-top: 70px;
   margin-bottom: 70px;
 
@@ -281,3 +282,4 @@ h1, h2, h3, h4, h5, h6 {
     }
   }
 }
+ */
